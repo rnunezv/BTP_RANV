@@ -8,8 +8,11 @@
     dataClass: #MIXED
 }
 define root view entity Z_I_TRAVEL_RANV
-  as select from ztb_travel_ranv
-  composition [0..*] of z_i_booking_ranv as _Booking
+  as select from ztb_travel_ranv as Travel
+  composition [0..*] of Z_I_BOOKING_RANV as _Booking
+  association [0..1] to /DMO/I_Agency    as _Agency   on $projection.AgencyID = _Agency.AgencyID
+  association [0..1] to /DMO/I_Customer  as _Customer on $projection.CustomerID = _Customer.CustomerID
+  association [0..1] to I_Currency       as _Currency on $projection.CurrencyCode = _Currency.Currency
 {
   key travel_id       as TravelID,
       agency_id       as AgencyID,
@@ -31,5 +34,8 @@ define root view entity Z_I_TRAVEL_RANV
       last_changed_by as LastChangedBy,
       @Semantics.systemDateTime.createdAt: true
       last_changed_at as LastChangedAt,
-      _Booking
+      _Booking,
+      _Agency,
+      _Customer,
+      _Currency
 }

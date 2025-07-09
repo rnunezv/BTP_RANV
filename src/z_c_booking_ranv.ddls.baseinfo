@@ -3,7 +3,8 @@
 {
 "FROM":
 [
-"ZTB_BOOKING_RANV"
+"/DMO/I_CARRIER",
+"Z_I_BOOKING_RANV"
 ],
 "ASSOCIATED":
 [
@@ -14,7 +15,9 @@
 "Z_I_TRAVEL_RANV"
 ],
 "BASE":
-[],
+[
+"Z_I_BOOKING_RANV"
+],
 "ANNO_REF":
 [],
 "SCALAR_FUNCTION":
