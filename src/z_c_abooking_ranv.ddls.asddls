@@ -1,6 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Consumption- Booking Approval'
 @Metadata.ignorePropagatedAnnotations: true
+@Metadata.allowExtensions: true
 define view entity Z_C_ABOOKING_RANV
   as projection on Z_I_BOOKING_RANV
 {
@@ -8,6 +9,7 @@ define view entity Z_C_ABOOKING_RANV
   key BookingID,
       BookingDate,
       CustomerID,
+      @ObjectModel.text.element: [ 'CarrierName' ]
       CarrierID,
       _Carrier.Name as CarrierName,
       ConnectionID,
@@ -18,7 +20,7 @@ define view entity Z_C_ABOOKING_RANV
       BookingStatus,
       LastChangedAt,
       /* Associations */
-      _Travel,
+      _Travel : redirected to parent Z_C_ATRAVEL_RANV,
       _Customer,
       _Carrier
 }
