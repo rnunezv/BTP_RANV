@@ -1,0 +1,15 @@
+@EndUserText.label: 'Travel'
+define service ZSD_TRAVEL_RANV {
+  expose Z_C_TRAVEL_RANV       as Travel;
+  expose Z_C_BOOKING_RANV      as Booking;
+  expose Z_C_BOOKSUP_RANV      as BookSup;
+  expose /DMO/I_Supplement     as Supplement;
+  expose /DMO/I_SupplementText as SupplementText;
+  expose /DMO/I_Customer       as Passenger;
+  expose /DMO/I_Agency         as Agency;
+  expose /DMO/I_Carrier        as Airline;
+  expose /DMO/I_Connection     as FlightConnection;
+  expose /DMO/I_Flight         as Flight;
+  expose I_Currency            as Currency;
+  expose I_Country             as Country;
+}

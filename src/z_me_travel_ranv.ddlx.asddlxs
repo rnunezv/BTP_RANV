@@ -23,7 +23,7 @@ annotate entity Z_C_TRAVEL_RANV with
       id: 'Booking',
       purpose: #STANDARD,
       type: #LINEITEM_REFERENCE,
-      label: 'Booiking',
+      label: 'Booking',
       position: 20,
       targetElement: '_Booking'
       }]
